@@ -32,8 +32,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     return cell
   }
 
-  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+    let cell = tableView.cellForRowAtIndexPath(indexPath)
+
+    defer {tableView.deselectRowAtIndexPath(indexPath, animated: false)}
+    guard let controller = storyboard?.instantiateViewControllerWithIdentifier("DatePickerViewController") as? DatePickerViewController else { return }
+
+    controller.callBackDate = {(displayedDateLabel) in
+      cell?.detailTextLabel?.text = displayedDateLabel
+     }
+
+    controller.callBackSegment = { (segmentLabel) in
+      cell?.textLabel?.text = segmentLabel
+    }
+
+    controller.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+    navigationController?.presentViewController(controller, animated: true, completion: nil)
+    }
+
+
+  @IBAction func unwindToVC(segue: UIStoryboardSegue) {
+    
+  }
+
+
 
 
 }
+
 

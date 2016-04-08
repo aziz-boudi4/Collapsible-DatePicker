@@ -32,7 +32,7 @@
                                                     <rect key="frame" x="15" y="12" width="50" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x37-Rq-fcX">
@@ -108,7 +108,7 @@
                                         <rect key="frame" x="265" y="6" width="37" height="30"/>
                                         <state key="normal" title="Done"/>
                                         <connections>
-                                            <action selector="getTheDate:" destination="qeD-Ht-DfL" eventType="touchUpInside" id="xBp-4A-deK"/>
+                                            <action selector="getTheDate:" destination="qeD-Ht-DfL" eventType="touchUpInside" id="iZh-G5-9Cu"/>
                                             <segue destination="ZmO-Js-Hw1" kind="unwind" unwindAction="unwindToVC:" id="fNA-9b-6bI"/>
                                         </connections>
                                     </button>
@@ -116,7 +116,7 @@
                                         <rect key="frame" x="16" y="6" width="31" height="30"/>
                                         <state key="normal" title="Now"/>
                                         <connections>
-                                            <action selector="getPresentDate:" destination="qeD-Ht-DfL" eventType="touchUpInside" id="Ave-Le-nEC"/>
+                                            <action selector="getPresentDate:" destination="qeD-Ht-DfL" eventType="touchUpInside" id="Lri-qY-oW6"/>
                                             <segue destination="ZmO-Js-Hw1" kind="unwind" unwindAction="unwindToVC:" id="ILX-ae-BHr"/>
                                         </connections>
                                     </button>
@@ -127,7 +127,7 @@
                                             <segment title="Arrive"/>
                                         </segments>
                                         <connections>
-                                            <action selector="segmentedControlAction:" destination="qeD-Ht-DfL" eventType="valueChanged" id="NJR-Ph-PS6"/>
+                                            <action selector="segmentedControlAction:" destination="qeD-Ht-DfL" eventType="valueChanged" id="bSQ-iY-5VT"/>
                                         </connections>
                                     </segmentedControl>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mjw-WV-UD1">
@@ -150,40 +150,21 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2v-qN-7cL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="312"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OU3-wv-Y5I">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="312"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="extraLight"/>
-                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z2v-qN-7cL" firstAttribute="top" secondItem="W4p-Ip-AIe" secondAttribute="top" id="0AY-WS-VkQ"/>
-                            <constraint firstItem="Z2v-qN-7cL" firstAttribute="leading" secondItem="W4p-Ip-AIe" secondAttribute="leading" id="3rs-Un-6G5"/>
-                            <constraint firstItem="y3k-CL-JrU" firstAttribute="top" secondItem="Z2v-qN-7cL" secondAttribute="bottom" constant="8" id="feF-gG-NK8"/>
                             <constraint firstAttribute="trailing" secondItem="y3k-CL-JrU" secondAttribute="trailing" id="gdX-MX-b6l"/>
                             <constraint firstItem="y3k-CL-JrU" firstAttribute="centerX" secondItem="W4p-Ip-AIe" secondAttribute="centerX" id="i6E-K4-DUI"/>
                             <constraint firstItem="y3k-CL-JrU" firstAttribute="centerY" secondItem="W4p-Ip-AIe" secondAttribute="centerY" constant="156" id="rYv-UA-b8t"/>
                             <constraint firstItem="nMc-mn-AYF" firstAttribute="top" secondItem="y3k-CL-JrU" secondAttribute="bottom" id="u9X-vI-oHM"/>
-                            <constraint firstAttribute="trailing" secondItem="Z2v-qN-7cL" secondAttribute="trailing" id="xub-9Y-QLr"/>
-                            <constraint firstItem="y3k-CL-JrU" firstAttribute="top" secondItem="Z2v-qN-7cL" secondAttribute="bottom" id="zZT-0p-oCj"/>
                             <constraint firstItem="y3k-CL-JrU" firstAttribute="leading" secondItem="W4p-Ip-AIe" secondAttribute="leading" id="zzz-bc-ps9"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="feF-gG-NK8"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="bluredView" destination="Z2v-qN-7cL" id="X4x-Nw-cQx"/>
-                        <outlet property="datePicker" destination="mjw-WV-UD1" id="KrQ-Sv-On4"/>
-                        <outlet property="segmentedControl" destination="vt0-WS-Xav" id="LrV-Yy-Pij"/>
-                        <outlet property="viewToMove" destination="y3k-CL-JrU" id="iUr-js-D1V"/>
+                        <outlet property="datePicker" destination="mjw-WV-UD1" id="qIq-BO-tma"/>
+                        <outlet property="segmentedControl" destination="vt0-WS-Xav" id="hPd-Ye-vez"/>
+                        <outlet property="viewToMove" destination="y3k-CL-JrU" id="tQ0-b0-Q9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRR-Iv-ujT" userLabel="First Responder" sceneMemberID="firstResponder"/>
